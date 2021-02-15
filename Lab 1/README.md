@@ -60,7 +60,7 @@ For this lab, the main idea for my interactive device is to have a device that w
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
-<img src="Storyboard.jpg" width="800px">
+<img src="Storyboard.jpg" width="500px">
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 **Summarize feedback you got here.**
@@ -94,7 +94,7 @@ Now, hange the goal within the same setting, and update the interaction with the
 ## Part E. Costume the device
 
 **Include sketches of what your device might look like here.**
-<img src="sketch.jpg" width="800px">
+<img src="sketch.jpg" width="500px">
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 Just using what I had in the house. Big telescope was cool, representing the camera of the device that would provide the image to use "computer vision to detect garbage on the ground". Very cool in my opinion, simple setup.
