@@ -68,6 +68,7 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 **Describe your setting, players, activity and goals here.**
+For this lab, the main idea for my interactive device is to have a device that will help keep your workspace clean. The setting will be in my study room, somewhere near my garbage can. The players would be the garbage that would show up on the ground, the device will interact with the garbage. The avtivity would be to have the device detect the garbage, move to the garbage and pick it up, then throw it into the garbage can. The goal is to have the garbage in the garbage can when its detected by the device.
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
