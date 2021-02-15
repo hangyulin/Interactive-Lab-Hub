@@ -90,6 +90,7 @@ Easy to install and easy to use. Very simple and nothing went wrong.
 https://drive.google.com/file/d/1xesvhDroNRau60zTQTj0EQLhZaFU1u1h/view?usp=sharing
 
 **Show the follow-up work here.**
+https://drive.google.com/file/d/1MD67wKBK8b5PGG45fxm15nCXJij4s-Xn/view?usp=sharing
 
 ## Part E. Costume the device
 
@@ -104,8 +105,11 @@ Just using what I had in the house. Big telescope was cool, representing the cam
 
 **Take a video of your prototyped interaction.**
 
+https://drive.google.com/file/d/1N8aXLdcGQoqJuHjdpW0YqpNPLHmnRDrH/view?usp=sharing
+
 **Please indicate anyone you collaborated with on this Lab.**
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+No one collaborated with me
 
 # Staging Interaction, Part 2 
 
