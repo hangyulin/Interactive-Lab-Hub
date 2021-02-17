@@ -124,9 +124,8 @@ This describes the second week's work for this lab activity.
 
 ## Prep (to be done before Lab on Wednesday)
 
-You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
-
 **Summarize feedback from your partners here.**
+
 Three of my group members all got the general idea of what my device does by watching the video. They said that the device looks like a garbage detector. If there is garbage on the ground, the light will change the color from white to red prompting people to throw it. After it has been cleaned up, the light turns to green and back to white later. They did suggest that it's better to use red and white only to indicate the two conditions, garbage on the ground and clean. Yellow and green are not necessary here and are easy to make people confused. Or maybe if yellow means the user is in the process of throwing the trash, then it'll be better to show that light changes to yellow after the person picks up the trash. An interesting suggestion that I could do for this week is that it would be nice to utilize some sounds in order to make it accessible to people with disabilities.
 
 ## Make it your own
