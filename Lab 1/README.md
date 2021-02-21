@@ -137,10 +137,12 @@ Do last week’s assignment again, but this time:
 
 **Document everything here.**
 
-**Take a video of your prototyped interaction.**
+**Include a picture of your storyboard here**
 
 <img src="Storyboard.jpg" width="800px">
 
 During the first attempt, I was not able to actually reproduce what I drew on the storyboard in the video because I did not have help. For the upgraded version, I had someone to help me to act out the robot that picks up the garbage and added sound to announce what the robot is doing.
+
+**Take a video of your prototyped interaction.**
 
 https://drive.google.com/file/d/18irhaWBqREOugEPhTtT7odvs636oGeqs/view?usp=sharing
