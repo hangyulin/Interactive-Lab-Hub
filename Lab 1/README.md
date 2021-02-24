@@ -83,6 +83,13 @@ A new idea occured to me. Instead of haveing the device move and go interact wit
 
 ## Part C. Prototype the device
 
+<<<<<<< HEAD
+=======
+We invented this tool for this lab! 
+
+If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
+
+>>>>>>> 2226ae6286232393c4220ed9e64800cb41deedc8
 **Give us feedback on Tinkerbelle.**
 
 Easy to install and easy to use. Very simple and nothing went wrong.
@@ -135,6 +142,7 @@ Do last week’s assignment again, but this time:
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors, 
 3) We will be grading with an emphasis on creativity. 
 
+<<<<<<< HEAD
 **Document everything here.**
 
 **Include a picture of your storyboard here**
@@ -146,3 +154,6 @@ During the first attempt, I was not able to actually reproduce what I drew on th
 **Take a video of your prototyped interaction.**
 
 https://drive.google.com/file/d/18irhaWBqREOugEPhTtT7odvs636oGeqs/view?usp=sharing
+=======
+**Document everything here. (Particularly we'd like to see the storyboard and video, although photos of the prototype are also great.)**
+>>>>>>> 2226ae6286232393c4220ed9e64800cb41deedc8
