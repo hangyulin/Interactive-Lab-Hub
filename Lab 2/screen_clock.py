@@ -61,6 +61,11 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
@@ -83,8 +88,10 @@ while True:
         sleep = 'time to sleep John'
     else:
         sleep = 'do not sleep John'
+
     if buttonA.value and buttonB.value:
-        
+        y = y + font.getsize(msg)[1]
+        draw.text((x, y), sleep, font=font, fill="#FF00FF")
 
     # Display image.
     disp.image(image, rotation)
