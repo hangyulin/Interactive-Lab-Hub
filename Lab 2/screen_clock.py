@@ -89,9 +89,9 @@ while True:
     else:
         sleep = 'do not sleep John'
 
-    if buttonA.value and buttonB.value:
+    if not buttonA.value and not buttonB.value:
         y = y + font.getsize(msg)[1]
-        draw.text((x, y), sleep, font=font, fill="#FF00FF")
+        draw.text((x, y), sleep, font=font, fill="#0000FF")
 
     # Display image.
     disp.image(image, rotation)
