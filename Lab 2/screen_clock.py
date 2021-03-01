@@ -70,6 +70,22 @@ while True:
     y = top
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
+    hr = int(time.strftime('%H'))
+    if hr > 19 or hr < 5:
+        msg = 'Night time'
+    else:
+        msg = 'Day time'
+
+    y = y + font.getsize(cur_time)[1]
+    draw.text((x, y), msg, font=font, fill="#FF00FF")
+    
+    if hr > 23 or hr < 9:
+        sleep = 'time to sleep John'
+    else:
+        sleep = 'do not sleep John'
+    if buttonA.value and buttonB.value:
+        
+
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
