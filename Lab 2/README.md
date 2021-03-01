@@ -167,8 +167,12 @@ After that git will ask you to login to your github account to upload.
 
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
+I added a feature to tell you when it is night time. Whenever the hour is larger than 19 or smaller than 5, it would show that it is night time. Or it would be day time.
+
+Another feature I added was when you press both buttons, it would tell you if it is time to sleep or not. For John, it is time to sleep between 23:00 and 9:00.
 
 **Take a video of your PiClock.**
+
 ![alt text](https://github.com/hangyulin/Interactive-Lab-Hub/blob/Spring2021/Lab%202/part1.gif)
 
 ## Part G. 
