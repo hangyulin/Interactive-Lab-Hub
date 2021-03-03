@@ -178,6 +178,8 @@ Another feature I added was when you press both buttons, it would tell you if it
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
+<img src="brainstorm.jpg" width="800px">
+
 ## Prep for Part 2
 
 1. Pick up remaining parts for kit.
