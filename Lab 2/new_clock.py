@@ -1,4 +1,5 @@
 import time
+from datetime import datetime, timedelta
 import subprocess
 import digitalio
 import board
@@ -66,12 +67,48 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-while True:
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+time_zone_version = 0
 
-    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
+def get_image(version):
+    if version == 0:
+        image = Image.open("usa.png")
+    elif version == 1:
+        image = Image.open("uk.png")
+    else:
+        image = Image.open("china.png")
+    
+    backlight = digitalio.DigitalInOut(board.D22)
+    backlight.switch_to_output()
+    backlight.value = True
+
+
+    # Scale the image to the smaller screen dimension
+    image_ratio = image.width / image.height
+    screen_ratio = width / height
+    if screen_ratio < image_ratio:
+        scaled_width = image.width * height // image.height
+        scaled_height = height
+    else:
+        scaled_width = width
+        scaled_height = image.height * width // image.width
+    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
+
+    # Crop and center the image
+    x = scaled_width // 2 - width // 2
+    y = scaled_height // 2 - height // 2
+    image = image.crop((x, y, x + width, y + height))
+
+    return image
+
+def display_time(version):
+    the_time = datetime.now()
+    if version == 1:
+        the_time += timedelta(hours = 5)
+    elif version == 2:
+        the_time += timedelta(hours = 13)
+    
+    cur_time = the_time.strftime("%m/%d/%Y %H:%M:%S")
+
     y = top
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
@@ -83,16 +120,28 @@ while True:
 
     y = y + font.getsize(cur_time)[1]
     draw.text((x, y), msg, font=font, fill="#FF00FF")
-    
-    if hr > 23 or hr < 9:
-        sleep = 'time to sleep John'
-    else:
-        sleep = 'do not sleep John'
 
-    if not buttonA.value and not buttonB.value:
-        y = y + font.getsize(msg)[1]
-        draw.text((x, y), sleep, font=font, fill="#0000FF")
+    if version == 0:
+        time_zone = 'EST'
+    elif version == 1:
+        time_zone = 'GMT'
+    else:
+        time_zone = 'CST'
+
+    y = bottom - font.getsize(time_zone)[1] * 1.5
+    draw.text((x, y), time_zone, font=font, fill="#0000FF")
 
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
+
+
+while True:
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
+    display_time(time_zone_version)
+    image = get_image(time_zone_version)
+    if buttonB.value and not buttonA.value:
+        time_zone_version = (time_zone_version + 1) % 3
