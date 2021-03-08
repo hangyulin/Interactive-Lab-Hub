@@ -71,13 +71,14 @@ time_zone_version = 0
 
 def get_image(version):
     image = Image.new("RGB", (width, height))
+    rotation = 90
 
     # Get drawing object to draw on image.
     draw = ImageDraw.Draw(image)
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-    disp.image(image)
+    disp.image(image, rotation)
 
     if version == 0:
         image = Image.open("usa.png")
@@ -86,11 +87,6 @@ def get_image(version):
     else:
         image = Image.open("china.png")
     
-    backlight = digitalio.DigitalInOut(board.D22)
-    backlight.switch_to_output()
-    backlight.value = True
-
-
     # Scale the image to the smaller screen dimension
     image_ratio = image.width / image.height
     screen_ratio = width / height
