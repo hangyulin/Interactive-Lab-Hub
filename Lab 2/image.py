@@ -101,7 +101,7 @@ padding = -2
 top = padding
 bottom = height - padding
 
-while:
+while True:
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
     y = top
