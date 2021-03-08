@@ -188,12 +188,8 @@ Another feature I added was when you press both buttons, it would tell you if it
 
 # Lab 2 Part 2
 
-Pull Interactive Lab Hub updates to your repo.
+For part 2, I listened to the feedbacks of my classmates. When you click the button, it would change the timezone. I added a flag to represent the country of where the timezone is at.
 
-Modify the code from last week's lab to make a new visual interface for your new clock. You may [extend the Pi](Extending%20the%20Pi.md) by adding sensors or buttons, but this is not required.
+Here is a demo:
 
-As always, make sure you document contributions and ideas from others explicitly in your writeup.
-
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
-
-
+![alt text](https://github.com/hangyulin/Interactive-Lab-Hub/blob/Spring2021/Lab%202/part2.gif)
