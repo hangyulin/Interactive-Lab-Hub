@@ -86,12 +86,7 @@ def get_image(version):
     else:
         scaled_width = width
         scaled_height = image.height * width // image.width
-    image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
-
-    # Crop and center the image
-    x = scaled_width // 2 - width // 2
-    y = scaled_height // 2 - height // 2
-    image = image.crop((x, y, x + width, y + height))
+    image = image.resize((100, 80), Image.BICUBIC)
 
     return image
 
