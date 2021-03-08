@@ -39,7 +39,7 @@ disp2 = st7789.ST7789(
     baudrate=BAUDRATE,
     width=135,
     height=240,
-    x_offset=140,
+    x_offset=100,
     y_offset=40,
 )
 
