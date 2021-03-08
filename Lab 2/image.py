@@ -10,7 +10,7 @@ not support PIL/pillow (python imaging library)!
 
 Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 """
-
+import time
 import digitalio
 import board
 from PIL import Image, ImageDraw
