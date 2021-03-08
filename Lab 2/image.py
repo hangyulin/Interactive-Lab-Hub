@@ -10,10 +10,10 @@ not support PIL/pillow (python imaging library)!
 
 Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 """
-import time
+
 import digitalio
 import board
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 import adafruit_rgb_display.ili9341 as ili9341
 import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
 import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
@@ -95,17 +95,7 @@ image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 x = scaled_width // 2 - width // 2
 y = scaled_height // 2 - height // 2
 image = image.crop((x, y, x + width, y + height))
-draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-padding = -2
-top = padding
-bottom = height - padding
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-while True:
-    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
-    y = top
-    draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
-    # Display image.
-    disp.image(image)
+# Display image.
+disp.image(image)
 

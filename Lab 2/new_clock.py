@@ -71,14 +71,17 @@ time_zone_version = 0
 
 def get_image(version):
     if version == 0:
-        image = Image.open("usa.png")
+        country_image = Image.open("usa.png")
     elif version == 1:
-        image = Image.open("uk.png")
+        country_image = Image.open("uk.png")
     else:
-        image = Image.open("china.png")
-    
-    image = image.resize((100, 80), Image.BICUBIC)
-    return image
+        country_image = Image.open("china.png")
+
+    country_image = country_image.convert('RGB')
+    # Scale the image to the smaller screen dimension
+    country_image = country_image.resize((100, 80), Image.BICUBIC)
+
+    return country_image
 
 
 def display_time(version):
@@ -116,13 +119,15 @@ def display_time(version):
     disp.image(image)
     time.sleep(1)
 
+country_image = get_image(time_zone_version)
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    image = get_image(time_zone_version)
     display_time(time_zone_version)
     if buttonB.value and not buttonA.value:
         time_zone_version = (time_zone_version + 1) % 3
+        country_image = get_image(time_zone_version)
+        disp.image(country_image)
