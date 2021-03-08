@@ -69,17 +69,6 @@ buttonB.switch_to_input()
 
 time_zone_version = 0
 
-while True:
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-
-    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    display_time(time_zone_version)
-
-    if not buttonA.value:
-        time_zone_version = (time_zone_version + 1) % 3
-
-
 def display_time(version):
     cur_time = datetime.now()
     if version == 1:
@@ -111,3 +100,13 @@ def display_time(version):
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
+
+while True:
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
+    display_time(time_zone_version)
+
+    if not buttonA.value:
+        time_zone_version = (time_zone_version + 1) % 3
