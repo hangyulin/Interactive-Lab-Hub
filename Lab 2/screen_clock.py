@@ -98,12 +98,13 @@ def display_time(version):
     else:
         time_zone = 'CST'
 
-    y = bottom
-    draw.text((x, y), time_zone, font=font, fill="#FF00FF")
+    y = bottom - font.getsize(time_zone)[1]
+    draw.text((x, y), time_zone, font=font, fill="#0000FF")
 
     # Display image.
     disp.image(image, rotation)
     time.sleep(1)
+
 
 while True:
     # Draw a black filled box to clear the image.
@@ -112,5 +113,5 @@ while True:
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     display_time(time_zone_version)
 
-    if not buttonA.value:
+    if buttonB.value and not buttonA.value:
         time_zone_version = (time_zone_version + 1) % 3
