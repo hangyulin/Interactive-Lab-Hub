@@ -77,17 +77,8 @@ def get_image(version):
     else:
         image = Image.open("china.png")
     
-    # Scale the image to the smaller screen dimension
-    image_ratio = image.width / image.height
-    screen_ratio = width / height
-    if screen_ratio < image_ratio:
-        scaled_width = image.width * height // image.height
-        scaled_height = height
-    else:
-        scaled_width = width
-        scaled_height = image.height * width // image.width
     image = image.resize((100, 80), Image.BICUBIC)
-
+    print(image.size())
     return image
 
 
