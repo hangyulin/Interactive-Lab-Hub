@@ -117,6 +117,7 @@ def display_time(version):
 
     # Display image.
     disp.image(image, rotation)
+    disp.image(country_image, rotation)
     time.sleep(1)
 
 
@@ -132,5 +133,3 @@ while True:
     if buttonB.value and not buttonA.value:
         time_zone_version = (time_zone_version + 1) % 3
         country_image = get_image(time_zone_version)
-
-    disp.image(country_image, rotation)
