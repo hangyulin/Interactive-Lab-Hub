@@ -95,7 +95,12 @@ image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 x = scaled_width // 2 - width // 2
 y = scaled_height // 2 - height // 2
 image = image.crop((x, y, x + width, y + height))
+draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
+#TODO: fill in here. You should be able to look in cli_clock.py and stats.py
+cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
+y = top
+draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 # Display image.
 disp.image(image)
 

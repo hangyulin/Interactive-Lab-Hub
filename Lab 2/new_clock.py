@@ -78,7 +78,6 @@ def get_image(version):
         image = Image.open("china.png")
     
     image = image.resize((100, 80), Image.BICUBIC)
-    print(image.size())
     return image
 
 
@@ -123,7 +122,7 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    display_time(time_zone_version)
     image = get_image(time_zone_version)
+    display_time(time_zone_version)
     if buttonB.value and not buttonA.value:
         time_zone_version = (time_zone_version + 1) % 3
