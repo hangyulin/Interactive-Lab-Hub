@@ -31,6 +31,18 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
+disp2 = st7789.ST7789(
+    spi,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+    width=135,
+    height=240,
+    x_offset=53,
+    y_offset=100,
+)
+
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
 height = disp.width  # we swap height/width to rotate it to landscape!
@@ -117,12 +129,12 @@ def display_time(version):
 
     # Display image.
     disp.image(image, rotation)
-    disp.image(country_image, rotation)
+    disp2.image(country_image, rotation)
     time.sleep(1)
 
 
 country_image = get_image(time_zone_version)
-disp.image(country_image)
+disp2.image(country_image, rotation)
 
 while True:
     # Draw a black filled box to clear the image.
