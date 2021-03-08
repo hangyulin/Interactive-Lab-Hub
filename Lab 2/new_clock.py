@@ -116,10 +116,12 @@ def display_time(version):
     draw.text((x, y), time_zone, font=font, fill="#0000FF")
 
     # Display image.
-    disp.image(image)
+    disp.image(image, rotation)
     time.sleep(1)
 
+
 country_image = get_image(time_zone_version)
+disp.image(country_image)
 
 while True:
     # Draw a black filled box to clear the image.
