@@ -1,4 +1,5 @@
 import time
+from datetime import datetime, timedelta
 import subprocess
 import digitalio
 import board
@@ -66,12 +67,26 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+time_zone_version = 0
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
+    display_time(time_zone_version)
+
+    if not buttonA.value:
+        time_zone_version = (time_zone_version + 1) % 3
+
+
+def display_time(version):
+    cur_time = datetime.now()
+    if version == 1:
+        cur_time -= timedelta(hour = 3)
+    elif version == 2:
+        cur_time += timedelta(hour = 13)
+    
     y = top
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
@@ -83,15 +98,15 @@ while True:
 
     y = y + font.getsize(cur_time)[1]
     draw.text((x, y), msg, font=font, fill="#FF00FF")
-    
-    if hr > 23 or hr < 9:
-        sleep = 'time to sleep John'
-    else:
-        sleep = 'do not sleep John'
 
-    if not buttonA.value and not buttonB.value:
-        y = y + font.getsize(msg)[1]
-        draw.text((x, y), sleep, font=font, fill="#0000FF")
+    if version == 0:
+        time_zone = 'EST'
+    elif version == 1:
+        time_zone = 'GMT'
+    else:
+        time_zone = 'CST'
+    y = y + font.getsize(cur_time)[1]
+    draw.text((x, y), msg, font=font, fill="#FF00FF")
 
     # Display image.
     disp.image(image, rotation)
