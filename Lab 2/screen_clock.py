@@ -73,9 +73,9 @@ time_zone_version = 0
 def display_time(version):
     the_time = datetime.now()
     if version == 1:
-        the_time -= timedelta(hour = 3)
+        the_time -= timedelta(hours = 3)
     elif version == 2:
-        the_time += timedelta(hour = 13)
+        the_time += timedelta(hours = 13)
     
     cur_time = the_time.strftime("%m/%d/%Y %H:%M:%S")
 
@@ -97,8 +97,9 @@ def display_time(version):
         time_zone = 'GMT'
     else:
         time_zone = 'CST'
-    y = y + font.getsize(cur_time)[1]
-    draw.text((x, y), msg, font=font, fill="#FF00FF")
+
+    y = bottom
+    draw.text((x, y), time_zone, font=font, fill="#FF00FF")
 
     # Display image.
     disp.image(image, rotation)
