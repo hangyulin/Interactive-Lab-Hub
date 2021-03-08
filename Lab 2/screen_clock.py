@@ -69,13 +69,16 @@ buttonB.switch_to_input()
 
 time_zone_version = 0
 
+
 def display_time(version):
-    cur_time = datetime.now()
+    the_time = datetime.now()
     if version == 1:
-        cur_time -= timedelta(hour = 3)
+        the_time -= timedelta(hour = 3)
     elif version == 2:
-        cur_time += timedelta(hour = 13)
+        the_time += timedelta(hour = 13)
     
+    cur_time = the_time.strftime("%m/%d/%Y %H:%M:%S")
+
     y = top
     draw.text((x, y), cur_time, font=font, fill="#FFFFFF")
 
