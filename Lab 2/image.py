@@ -100,7 +100,7 @@ draw.rectangle((0, 0, width, height), outline=0, fill=0)
 padding = -2
 top = padding
 bottom = height - padding
-
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 while True:
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     cur_time = time.strftime("%m/%d/%Y %H:%M:%S") 
