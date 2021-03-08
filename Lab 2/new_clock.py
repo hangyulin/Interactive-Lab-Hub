@@ -70,16 +70,6 @@ buttonB.switch_to_input()
 time_zone_version = 0
 
 def get_image(version):
-    image = Image.new("RGB", (width, height))
-    rotation = 90
-
-    # Get drawing object to draw on image.
-    draw = ImageDraw.Draw(image)
-
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-    disp.image(image, rotation)
-
     if version == 0:
         image = Image.open("usa.png")
     elif version == 1:
@@ -138,7 +128,7 @@ def display_time(version):
     draw.text((x, y), time_zone, font=font, fill="#0000FF")
 
     # Display image.
-    disp.image(image, rotation)
+    disp.image(image)
     time.sleep(1)
 
 
