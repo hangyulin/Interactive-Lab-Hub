@@ -13,7 +13,7 @@ Author(s): Melissa LeBlanc-Williams for Adafruit Industries
 import time
 import digitalio
 import board
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.ili9341 as ili9341
 import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
 import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
