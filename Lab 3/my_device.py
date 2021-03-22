@@ -90,8 +90,10 @@ todo_list = [(1, 'eat dinner'), (2, 'do homework')]
 def read_todo_list(todo_list):
     for number, item in todo_list:
         line = str(number) + ',' + item
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
         draw.text((x, y), line, font=font, fill="#FF00FF")
         call(f"espeak '{line}'", shell=True)
+        disp.image(image, rotation)
 
 while True:
     # Draw a black filled box to clear the image.
