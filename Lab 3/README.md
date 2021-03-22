@@ -78,33 +78,27 @@ Quinn said that it is interesting. Maybe have the todo list connect to a cloud o
 
 ## Prototype your system
 
-The system should:
-* use the Raspberry Pi 
-* use one or more sensors
-* require participants to speak to it. 
+It is a todo list. When you press the top button, it will read and display all the items in the list. When you press the bottom button and say the number in the todo list that you finished, it will delete that item from the list.
 
-*Document how the system works*
-
-*Include videos or screencaptures of both the system and the controller.*
+https://drive.google.com/file/d/14JiOmGz7wtIO-Yhii1qo-ZpUPhpAVC8W/view?usp=sharing
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
+Jame and Karen used my device.
+
 Answer the following:
 
 ### What worked well about the system and what didn't?
-*your answer here*
+James said that my device reads the list out very well. It also display the item in text on the display while it is reading. The thing that did not work well is that my speech2text is hardcoded, the device cannot actually recognize the voice and always delete the first item in the list. Karen said that the buttons are hard to press and the text on display is a little small and fast.
 
 ### What worked well about the controller and what didn't?
-
-*your answer here*
+The controller worked relatively well. A speaker instead of a ear bud would be nice. The buttons do not respond fast enough, you have to hold them for half a second.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-
-*your answer here*
+I realized that the speech2text needs to work well. It should be able to identify the words coming out the the users' mouth on first try. Also, being able to edit or add to the list would be important for a more autonomous version. Having automatic reminders would be nice too, so the user do not have to press the button to listen to the todo list.
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-
-*your answer here*
+My system could capture how people prioritize their todo list by storing which items they finish first.
 
