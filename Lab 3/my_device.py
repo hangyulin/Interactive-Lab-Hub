@@ -6,7 +6,6 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from subprocess import Popen, call
-from vosk import Model, KaldiRecognizer
 import sys
 import os
 import wave
