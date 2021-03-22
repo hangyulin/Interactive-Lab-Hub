@@ -90,6 +90,7 @@ todo_list = [(1, 'eat dinner'), (2, 'do homework')]
 def read_todo_list(todo_list):
     for number, item in todo_list:
         line = str(number) + ',' + item
+        draw.text((x, y), line, font=font, fill="#FF00FF")
         call(f"espeak '{line}'", shell=True)
 
 while True:
@@ -100,3 +101,5 @@ while True:
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     if buttonB.value and not buttonA.value:
         read_todo_list(todo_list)
+    
+    time.sleep(1)
