@@ -74,6 +74,7 @@ x = 0
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 35)
+font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -85,15 +86,28 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-todo_list = [(1, 'eat dinner'), (2, 'do homework')]
+todo_list = ['eat dinner', 'do homework', 'play games']
 
 def read_todo_list(todo_list):
-    for number, item in todo_list:
-        line = str(number) + ',' + item
+    for number, item in enumerate(todo_list):
+        line = str(number + 1) + ',' + item
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
-        draw.text((x, y), line, font=font, fill="#FF00FF")
+        draw.text((x, y), line, font=font2, fill="#FF00FF")
         call(f"espeak '{line}'", shell=True)
         disp.image(image, rotation)
+
+def listen_for_done():
+    time.sleep(2)
+    to_delete = 1
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+    if to_delete < len(todo_list):
+        line = str(to_delete) + ' done'
+        draw.text((x, y), line, font=font2, fill="#FF00FF")
+        del todo_list[to_delete - 1]
+    else:
+        draw.text((x, y), 'out of range', font=font2, fill="#FF00FF")
+    
+    disp.image(image, rotation)
 
 while True:
     # Draw a black filled box to clear the image.
@@ -103,5 +117,7 @@ while True:
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     if buttonB.value and not buttonA.value:
         read_todo_list(todo_list)
+    if not buttonB.value and buttonA.value:
+        listen_for_done()
     
     time.sleep(1)
