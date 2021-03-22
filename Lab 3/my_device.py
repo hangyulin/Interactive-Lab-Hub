@@ -65,6 +65,7 @@ disp.image(image, rotation)
 # First define some constants to allow easy resizing of shapes.
 padding = -2
 top = padding
+y = top
 bottom = height - padding
 # Move left to right keeping track of the current x position for drawing shapes.
 x = 0
@@ -72,7 +73,7 @@ x = 0
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 35)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
