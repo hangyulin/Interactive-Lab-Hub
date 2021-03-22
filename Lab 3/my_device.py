@@ -96,7 +96,7 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     draw.text((x, y), 'TODO LIST', font=font, fill="#0000FF")
-
+    disp.image(image, rotation)
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     if buttonB.value and not buttonA.value:
         read_todo_list(todo_list)
