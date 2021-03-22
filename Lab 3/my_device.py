@@ -95,9 +95,8 @@ def read_todo_list(todo_list):
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    draw.text((x, y), time_zone, font=font, fill="#0000FF")
+    draw.text((x, y), 'TODO LIST', font=font, fill="#0000FF")
 
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    display_time(time_zone_version)
     if buttonB.value and not buttonA.value:
         read_todo_list(todo_list)
