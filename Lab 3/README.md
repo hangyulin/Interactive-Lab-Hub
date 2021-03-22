@@ -70,7 +70,11 @@ Create a system that runs on the Raspberry Pi that takes in one or more sensors 
 
 ## Share your idea sketches with Zoom Room mates and get feedback
 
-*what was the feedback? Who did it come from?*
+James said that my idea was fine, but maybe add more sensors to the Pi. He also mentioned that adding a function to add new tasks to the to do list by voice would be cool. However, I think that would be really hard to do unless the speech2text is super accurate.
+
+Andrew said that it is a great idea, very interesting application. This would help people that are not able to read from a small screen. However, maybe we can include the text on the screen while the machine is reading it outloud.
+
+Quinn said that it is interesting. Maybe have the todo list connect to a cloud or online source to sync the todo list with other lists you have.
 
 ## Prototype your system
 
