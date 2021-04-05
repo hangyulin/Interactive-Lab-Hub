@@ -197,6 +197,9 @@ I will have a video of showing how it works in the "Acts like" section.
 
 4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
 
+Here is a video of me explaining how it works and another person interacting with it. They have one ear bud in their ear, another is placed beside my phone for recording.
+
+https://drive.google.com/file/d/11ZO1qgO4U2jW4Fpr0WS-Oxs9uRpiiDYM/view?usp=sharing
 
 5. Submit these in the lab 4 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
 
