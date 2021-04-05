@@ -22,7 +22,7 @@ oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 image = Image.new("1", (oled.width, oled.height))
 draw = ImageDraw.Draw(image)
 
-music_script = deque([3,3,3,3,5,1,2,3])
+music_script = deque([3,3,3,3,3,3,3,5,1,2,3,4,4,4,4,3,3,3,2,2,3,2,5,3,3,3,3,3,3,3,5,1,2,3,4,4,4,4,3,3,5,5,4,2,1])
 
 def play_key(key):
     pygame.mixer.init()
@@ -37,8 +37,6 @@ def play_key(key):
     else:
         pygame.mixer.music.load("./sound/g.mp3")
     pygame.mixer.music.play()
-    # while pygame.mixer.music.get_busy() == True:
-    #     continue
 
 # start with a blank screen
 oled.fill(0)
@@ -51,6 +49,7 @@ while True:
         next_text = 'Play ' + str(music_script[0])
 
     oled.fill(0)
+    oled.show()
     draw.text((0, 0), next_text, font=font, fill="#0000FF")
     oled.image(image)
     # show all the changes we just made
