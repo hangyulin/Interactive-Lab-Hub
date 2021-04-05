@@ -37,8 +37,8 @@ def play_key(key):
     else:
         pygame.mixer.music.load("./sound/g.mp3")
     pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy() == True:
-        continue
+    # while pygame.mixer.music.get_busy() == True:
+    #     continue
 
 # start with a blank screen
 oled.fill(0)
@@ -50,6 +50,7 @@ while True:
     else:
         next_text = 'Play ' + str(music_script[0])
 
+    oled.fill(0)
     draw.text((0, 0), next_text, font=font, fill="#0000FF")
     oled.image(image)
     # show all the changes we just made
