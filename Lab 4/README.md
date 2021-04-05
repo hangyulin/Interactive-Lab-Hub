@@ -130,9 +130,17 @@ Make a paper display for your project that communicates the state of the Pi and 
  
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
 
+<img src="paper.jpg" width="800px">
+
 **b. Make a video of your paper display in action.**
 
+https://drive.google.com/file/d/1G63RjwVTF07p-79XkLxUbS3j5SkKSyUZ/view?usp=sharing
+
+Note: It does not sing out the lyrics, it is actually real piano sound. Sorry I sang it instead of making pretend piano noise.
+
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+It needed to be this size because I am using tin foil so they cannot be touch each other in the box. I needed the box to be large enough to space them out, but also not too large that people cannot play it with one hand. I actually cut the box in half to make it small enough.
 
 ### Part D
 ### Materiality
@@ -143,7 +151,17 @@ Design a system with the Pi and anything from your kit with a focus on form, and
 
 **a. document the material prototype.** Include candidates that were considered even if they were set aside later.
 
+<img src="real.jpg" width="800px">
+
+The front view of my prototype, all the Pi could be hidden inside of the box. But I took a picture of them outside to get a better view. Also I do not have a speaker, so I needed to be able to reach my ear buds.
+
+<img src="real back.jpg" width="800px">
+
+This is what it looks like inside of my box.
+
 **b. explain the selection.**
+
+I used tin foil because it is the only thing I could get. The cardboard box I had to cut in half because it was too large. I used the led to be easily taped on the box from the inside.
 
 ### Part 2.
 
@@ -152,9 +170,34 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 Reiterating:
 ### Deliverables for this lab are: 
 1. Sketches/photos of device designs
+
+<img src="design.jpg" width="800px">
+
 1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
+
+<img src="paper.jpg" width="800px">
+
+Not sure about the weigh... I have nothing at home to weigh it.
+
+<img src="real.jpg" width="800px">
+
+The front view of my material prototype, all the Pi could be hidden inside of the box. But I took a picture of them outside to get a better view. Also I do not have a speaker, so I needed to be able to reach my ear buds.
+
+<img src="real back.jpg" width="800px">
+
+This is what it looks like inside of my box.
+
 3. "Works like" prototypes: show us what the device can do
+
+I showed what it does with the paper prototype. 
+
+https://drive.google.com/file/d/1G63RjwVTF07p-79XkLxUbS3j5SkKSyUZ/view?usp=sharing
+
+I will have a video of showing how it works in the "Acts like" section.
+
 4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
+
+
 5. Submit these in the lab 4 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
 
 
