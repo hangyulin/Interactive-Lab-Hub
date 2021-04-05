@@ -9,10 +9,11 @@ import adafruit_mpr121
 from collections import deque
 from PIL import Image, ImageDraw, ImageFont
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-mpr121 = adafruit_mpr121.MPR121(i2c)
 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
+
+mpr121 = adafruit_mpr121.MPR121(i2c)
 
 # Create the SSD1306 OLED class.
 # The first two parameters are the pixel width and pixel height.  Change these
