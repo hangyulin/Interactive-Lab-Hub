@@ -16,7 +16,7 @@ oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 
 def play_c():
     pygame.mixer.init()
-    pygame.mixer.music.load("/sound/c.mp3")
+    pygame.mixer.music.load("./sound/c.mp3")
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy() == True:
         continue
