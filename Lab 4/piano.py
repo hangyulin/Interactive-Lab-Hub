@@ -29,13 +29,13 @@ def play_key(key):
     if key == 1:
         pygame.mixer.music.load("./sound/c.mp3")
     elif key == 2:
-        pygame.mixer.music.load("/Developing and Designing Interactive Devices/Interactive-Lab-Hub/Lab 4/sound/d.mp3")
+        pygame.mixer.music.load("./sound/d.mp3")
     elif key == 3:
         pygame.mixer.music.load("./sound/e.mp3")
     elif key == 4:
-        pygame.mixer.music.load("/Developing and Designing Interactive Devices/Interactive-Lab-Hub/Lab 4/sound/f.mp3")
+        pygame.mixer.music.load("./sound/f.mp3")
     else:
-        pygame.mixer.music.load("/Developing and Designing Interactive Devices/Interactive-Lab-Hub/Lab 4/sound/g.mp3")
+        pygame.mixer.music.load("./sound/g.mp3")
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy() == True:
         continue
@@ -51,7 +51,7 @@ while True:
         next_text = 'Play ' + str(music_script[0])
 
     draw.text((0, 0), next_text, font=font, fill="#0000FF")
-
+    oled.image(image)
     # show all the changes we just made
     oled.show()
     if music_script and mpr121[music_script[0] + 5].value:
