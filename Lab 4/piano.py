@@ -54,6 +54,6 @@ while True:
 
     # show all the changes we just made
     oled.show()
-    if music_script and mpr121[music_script[0]].value:
+    if music_script and mpr121[music_script[0] + 5].value:
         play_key(music_script[0])
         music_script.popleft()
