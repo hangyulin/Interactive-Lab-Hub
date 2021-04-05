@@ -31,7 +31,7 @@ def play_key(key):
     elif key == 2:
         pygame.mixer.music.load("/Developing and Designing Interactive Devices/Interactive-Lab-Hub/Lab 4/sound/d.mp3")
     elif key == 3:
-        pygame.mixer.music.load("\Developing and Designing Interactive Devices\Interactive-Lab-Hub\Lab 4\sound\e.mp3")
+        pygame.mixer.music.load("./sound/e.mp3")
     elif key == 4:
         pygame.mixer.music.load("/Developing and Designing Interactive Devices/Interactive-Lab-Hub/Lab 4/sound/f.mp3")
     else:
