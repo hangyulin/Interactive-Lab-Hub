@@ -1,3 +1,5 @@
+I have a headache and coughing for the past week. We do not have enough vaccines in Canada yet... Only getting to people from 45-55 years old. I am continuing to work on the lab and will finish as soon as possible... Plus I am having trouble with my device
+
 # Observant Systems
 
 
