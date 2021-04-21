@@ -1,0 +1,3 @@
+0 Do nothing
+1 Calling on phone
+2 Drinking water
