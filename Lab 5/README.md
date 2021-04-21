@@ -1,5 +1,3 @@
-I have a headache and coughing for the past week. We do not have enough vaccines in Canada yet... Only getting to people from 45-55 years old. I am continuing to work on the lab and will finish as soon as possible... Plus I am having trouble with my device
-
 # Observant Systems
 
 
@@ -85,6 +83,13 @@ pi@ixe00:~/openCV-examples $ tree -l
     ├── HowToUse.md
     └── ssd_mobilenet_v2_coco_2018_03_29.pbtxt
 ```
+
+<img src="contour.png" width="400px">
+
+<img src="detect.jpg" width="400px">
+
+<img src="face.jpg" width="400px">
+
 #### Filtering, FFTs, and Time Series data. (beta, optional)
 Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU data stream could create a simple activity classifier between walking, running, and standing.
 
@@ -100,6 +105,8 @@ Include links to your code here, and put the code for these in your repo--they w
 
 #### Teachable Machines (beta, optional)
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) might look very simple.  However, its simplicity is very useful for experimenting with the capabilities of this technology.
+
+<img src="teach.jpg" width="800px">
 
 You can train a Model on your browser, experiment with its performance, and then port it to the Raspberry Pi to do even its task on the device.
 
@@ -123,6 +130,8 @@ This can be as simple as the boat detector earlier.
 Try out different interactions outputs and inputs.
 **Describe and detail the interaction, as well as your experimentation.**
 
+I picked detection, however, I used teachable machine to be able to identify the object in the image. I trained it to detect when I am sitting, drinking, or calling with phone.
+
 ### Part C
 ### Test the interaction prototype
 
@@ -133,11 +142,15 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+The device is suppose to keep track of what I am doing. Whether I am sitting, drinking, or calling. It fails when I tried to record what is happening with another phone, which accidentally gets in the shot. Other scenarios that could cause problems is when the background is not clean or unknown objects enters the shot.
+
 **Think about someone using the system. Describe how you think this will work.**
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
+
+Well they are not aware that other objects should not be in the shot. They could be holding something that is not a water bottle or a phone and the system would misclassify. I would have to train my model with varies backgrounds to address this problem. Some optimizations is to add a GPU.
 
 ### Part D
 ### Characterize your own Observant system
@@ -145,18 +158,37 @@ For example:
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+
+Detecting objects and identifying them. Or gestures.
+
 * What is a good environment for X?
+
+Clean background with no distractions
+
 * What is a bad environment for X?
+
+Bad when unexpected item enters the screen. Such as my other phone used for recording.
+
 * When will X break?
+
+When items not used for training enters the screen
+
 * When it breaks how will X break?
+
+It cannot correctly predict the item
+
 * What are other properties/behaviors of X?
 * How does X feel?
 
 **Include a short video demonstrating the answers to these questions.**
+
+https://drive.google.com/file/d/1C62U9wNytaISoVSFJcMQJVi3OffMH_55/view?usp=sharing
 
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **Include a short video demonstrating the finished result.**
+
+https://drive.google.com/file/d/1C62U9wNytaISoVSFJcMQJVi3OffMH_55/view?usp=sharing
 
