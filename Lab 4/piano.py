@@ -50,11 +50,15 @@ def on_connect(client, userdata, flags, rc):
 	# you can subsribe to as many topics as you'd like
 	# client.subscribe('some/other/topic')
 
-
+correct_keys = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5}
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
 	instructions = msg.payload.decode('UTF-8')
-    new_script = [int(x) for x in instructions.split(',')]
+    new_script = []
+    for instruction in instructions:
+        if instruction in correct_keys:
+            new_script.append(int(correct_keys[instruction]))
+
     music_script.extend(new_script)
 	# you can filter by topics
 	# if msg.topic == 'IDD/some/other/topic': do thing
