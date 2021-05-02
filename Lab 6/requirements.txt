@@ -13,3 +13,10 @@ pyusb==1.1.1
 rpi-ws281x==4.2.6
 RPi.GPIO==0.7.0
 sysv-ipc==1.1.0
+
+adafruit-circuitpython-framebuf==1.4.6
+adafruit-circuitpython-mpr121==2.1.7
+adafruit-circuitpython-ssd1306==2.11.2
+Adafruit-GPIO==1.0.3
+Adafruit-SSD1306==1.6.2
+spidev==3.5
