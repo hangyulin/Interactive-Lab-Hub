@@ -54,6 +54,7 @@ correct_keys = {'one':1, 'two':2, 'three':3, 'four':4, 'five':5}
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
     instructions = msg.payload.decode('UTF-8')
+    print(instructions)
     new_script = []
     for instruction in instructions:
         if instruction.isdigit():
