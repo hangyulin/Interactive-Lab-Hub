@@ -19,7 +19,7 @@ client.connect(
 import board
 import busio
 import adafruit_ssd1306
-import pygame
+# import pygame
 import adafruit_mpr121
 from collections import deque
 from PIL import Image, ImageDraw, ImageFont
