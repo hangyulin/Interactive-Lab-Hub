@@ -101,6 +101,10 @@ The design is a remote piano teaching system with a teacher and a student. The s
 
 The piano is simple to use, the student will look at what the next key the LED screen show them to press. Then, they press the key and the sound will be played.
 
+<img src="teacher.png" width="800px">
+
+The instructions giving device is a Pi connected with a microphone, speaker and a gesture sensor so that everytime an instruction needs to be sent, just wave to the sensor and speak to the Pi of the keys so that the instructions will be transmitted from the instruction giving decive to the piano device's display.
+
 **4. Document the working prototype in use.**
 
 We recorded it over a live zoom session. One of us is in NYC, the other in Toronto. We are clearly far apart.
