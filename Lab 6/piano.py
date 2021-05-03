@@ -82,7 +82,6 @@ client2.connect(
 
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
-client2.loop_forever()
 
 # def play_key(key):
 #     pygame.mixer.init()
@@ -105,6 +104,7 @@ oled.show()
 while True:
     if not music_script:
         next_text = 'DONE'
+        client2.loop()
     else:
         next_text = 'Play ' + str(music_script[0])
 
@@ -116,3 +116,4 @@ while True:
     if music_script and mpr121[music_script[0] + 5].value:
         client.publish("IDD/John", music_script[0])
         music_script.popleft()
+    
