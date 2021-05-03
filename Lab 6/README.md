@@ -85,12 +85,28 @@ Glitch is a great tool for prototyping sites, interfaces and web-apps that's wor
 
 Find at least one class (more are okay) partner, and design a distributed application together. 
 
-**1. Explain your design** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
+I teamed up with James Wang for this assignment, because the system requires two people.
 
-**2. Diagram the architecture of the system.** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+**1. Explain your design**
 
-**3. Build a working prototype of the system.** Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect?
+The design is a remote piano teaching system with a teacher and a student. The system is used for people to teach and learn basic piano songs remotely. The teacher will tell the student which keys to press next, and the student will only be able to press those keys in the right sequence. The piano sound will be played on the teacher's end, the teacher will be able to listen and assess the student's learning.
 
-**4. Document the working prototype in use.** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
+**2. Diagram the architecture of the system.** 
 
-**5. BONUS (Wendy didn't approve this so you should probably ignore it)** get the whole class to run your code and make your distributed system BIGGER.
+<img src="diagram.jpg" width="800px">
+
+**3. Build a working prototype of the system.**
+
+<img src="piano.png" width="500px">
+
+The piano is simple to use, the student will look at what the next key the LED screen show them to press. Then, they press the key and the sound will be played.
+
+**4. Document the working prototype in use.**
+
+We recorded it over a live zoom session. One of us is in NYC, the other in Toronto. We are clearly far apart.
+
+https://youtu.be/TG67QcSPpe8
+
+**5. BONUS (Wendy didn't approve this so you should probably ignore it)** 
+
+Ignored
