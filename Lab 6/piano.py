@@ -102,9 +102,10 @@ oled.fill(0)
 # we just blanked the framebuffer. to push the framebuffer onto the display, we call show()
 oled.show()
 while True:
+    client2.loop()
+
     if not music_script:
         next_text = 'DONE'
-        client2.loop()
     else:
         next_text = 'Play ' + str(music_script[0])
 
