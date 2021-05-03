@@ -56,8 +56,9 @@ def on_message(cleint, userdata, msg):
 	instructions = msg.payload.decode('UTF-8')
     new_script = []
     for instruction in instructions:
-        if instruction in correct_keys:
-            new_script.append(int(correct_keys[instruction]))
+        # if instruction in correct_keys:
+        if instruction.isdigit():
+            new_script.append(int(instruction))
 
     music_script.extend(new_script)
 	# you can filter by topics
