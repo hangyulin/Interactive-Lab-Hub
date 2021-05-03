@@ -37,7 +37,7 @@ oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 image = Image.new("1", (oled.width, oled.height))
 draw = ImageDraw.Draw(image)
 
-music_script = deque([3,3,3,3,3,3,3,5,1,2,3,4,4,4,4,3,3,3,2,2,3,2,5,3,3,3,3,3,3,3,5,1,2,3,4,4,4,4,3,3,5,5,4,2,1])
+music_script = deque()
 
 # the # wildcard means we subscribe to all subtopics of IDD
 topic = 'IDD/James'
