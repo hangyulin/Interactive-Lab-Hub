@@ -110,8 +110,8 @@ oled.fill(0)
 # we just blanked the framebuffer. to push the framebuffer onto the display, we call show()
 oled.show()
 
-w = 10
-h = 10
+w = 15
+h = 15
 x1 = 50
 y1 = 50
 time_counter = 0.0
@@ -131,5 +131,5 @@ while True:
     client.publish("IDD/John", str(x1) + ',' + str(y1))
     time.sleep(0.5)
     time_counter += 0.5
-    x1 += 5
-    y1 += 5
+    x1 += 10
+    y1 += 10
