@@ -12,6 +12,9 @@ import adafruit_rgb_display.st7789 as st7789
 import busio
 import adafruit_ssd1306
 
+from board import SCL, SDA
+from adafruit_apds9960.apds9960 import APDS9960
+
 # Setup SPI bus using hardware SPI:
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -62,6 +65,9 @@ font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
+apds = APDS9960(i2c)
+apds.enable_proximity = True
+apds.enable_gesture = True
 
 # Create the SSD1306 OLED class.
 # The first two parameters are the pixel width and pixel height.  Change these
@@ -130,6 +136,10 @@ def calculate_next_coor(x1, y1, direction, speed):
     return x1, y1
 
 while True:
+    gesture = apds.gesture()
+    if gesture != 0:
+        cur_direction = gesture - 1
+
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
     old_x1, old_y1 = x1, y1
     x1, y1 = calculate_next_coor(x1, y1, cur_direction, speed)
