@@ -139,6 +139,7 @@ while True:
     gesture = apds.gesture()
     if gesture != 0:
         cur_direction = gesture - 1
+        print(cur_direction)
 
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
     old_x1, old_y1 = x1, y1
