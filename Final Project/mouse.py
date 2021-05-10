@@ -67,8 +67,8 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # The first two parameters are the pixel width and pixel height.  Change these
 # to the right size for your display!
 oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
-image = Image.new("1", (oled.width, oled.height))
-draw = ImageDraw.Draw(image)
+image_oled = Image.new("1", (oled.width, oled.height))
+draw_oled = ImageDraw.Draw(image_oled)
 
 # the # wildcard means we subscribe to all subtopics of IDD
 topic = 'IDD/James'
@@ -123,9 +123,9 @@ while True:
 
     client2.loop()
 
-    draw.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
-    draw.text((25, 5), str(time_counter), font=font, fill="#0000FF")
-    oled.image(image)
+    draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+    draw_oled.text((25, 5), str(time_counter), font=font, fill="#0000FF")
+    oled.image(image_oled)
     # show all the changes we just made
     oled.show()
 
