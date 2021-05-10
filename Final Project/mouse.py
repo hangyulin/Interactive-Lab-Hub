@@ -115,8 +115,27 @@ h = 15
 x1 = 50
 y1 = 50
 time_counter = 0.0
+cur_direction = 0
+speed = 10
+
+all_direction = {1:(-1, 0), 2:(1,0), 3:(0,-1), 4:(0,1)}
+
+def calculate_next_coor(x1, y1, direction, speed):
+    new_x1 = x1 + all_direction[direction][0] * speed
+    new_y1 = y1 + all_direction[direction][1] * speed
+
+    if 0 <= new_x1 <= width - w and 0 <= new_y1 <= height - h:
+        return new_x1, new_y1
+    
+    return x1, y1
+
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+    old_x1, old_y1 = x1, y1
+    x1, y1 = calculate_next_coor(x1, y1, cur_direction, speed)
+    if (x1, y1) == (old_x1, old_y1):
+        cur_direction = (cur_direction + 1) % 4
+
     draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
 
@@ -131,5 +150,3 @@ while True:
     client.publish("IDD/John", str(x1) + ',' + str(y1))
     time.sleep(0.5)
     time_counter += 0.5
-    x1 += 10
-    y1 += 10
