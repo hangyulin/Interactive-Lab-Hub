@@ -97,7 +97,7 @@ client2.username_pw_set('idd', 'device@theFarm')
 
 # attach out callbacks to the client
 client2.on_connect = on_connect
-client2.on_message = on_message
+
 
 #connect to the broker
 client2.connect(
@@ -135,6 +135,8 @@ def calculate_next_coor(x1, y1, direction, speed):
 def on_message(cleint, userdata, msg):
     coor = msg.payload.decode('UTF-8')
     x2, y2, w2, h2 = [int(t) for t in coor.split(',')]
+
+client2.on_message = on_message
     
 
 while True:
