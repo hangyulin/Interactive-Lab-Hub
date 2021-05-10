@@ -176,7 +176,8 @@ while True:
     oled.show()
 
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
-    time_counter = time.strftime("%S", datetime.now() - start)
+
+    time_counter = str(divmod(end-start, 3600)[1] % 60)
     if time_counter >= 60:
         draw.text((20, 20), 'TIE', font=font, fill="#0000FF")
         break
