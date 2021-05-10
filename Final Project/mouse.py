@@ -180,14 +180,14 @@ while True:
 
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
 
-    time_counter = int(divmod(time.time() - start, 3600)[1] % 60)
+    time_counter = int((time.time() - start) % 3600)
 
     if isRectangleOverlap([x1, y1, x1 + w, y1 + h], [x2, y2, x2 + w, y2 + h]):
         draw.text((30, 30), 'LOSE', font=font2, fill="#0000FF")
         disp.image(image, rotation)
         break
 
-    elif time_counter >= 50:
+    elif time_counter >= 120:
         draw.text((30, 30), 'WIN', font=font2, fill="#0000FF")
         disp.image(image, rotation)
         break
