@@ -133,6 +133,7 @@ def calculate_next_coor(x1, y1, direction, speed):
 
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
+    nonlocal x2, y2, w2, h2
     coor = msg.payload.decode('UTF-8')
     x2, y2, w2, h2 = [int(t) for t in coor.split(',')]
 
