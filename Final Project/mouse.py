@@ -118,7 +118,7 @@ w2 = 25
 h2 = 25
 time_counter = 0.0
 cur_direction = 1
-speed = 5
+speed = 8
 
 all_direction = {0:(0, -1), 1:(0, 1), 2:(-1, 0), 3:(1, 0)}
 
