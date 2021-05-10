@@ -135,7 +135,12 @@ def calculate_next_coor(x1, y1, direction, speed):
 def on_message(cleint, userdata, msg):
     nonlocal x2, y2, w2, h2
     coor = msg.payload.decode('UTF-8')
-    x2, y2, w2, h2 = [int(t) for t in coor.split(',')]
+    new_coor = [int(t) for t in coor.split(',')]
+    x2 = new_coor[0]
+    y2 = new_coor[1]
+    w2 = new_coor[2]
+    h2 = new_coor[3]
+    
 
 client2.on_message = on_message
     
