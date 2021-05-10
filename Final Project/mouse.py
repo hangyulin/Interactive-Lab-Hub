@@ -63,7 +63,7 @@ client.connect(
     port=8883)
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
-font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
+font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 50)
 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -168,7 +168,7 @@ while True:
     client2.loop()
 
     draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
-    draw_oled.text((35, 8), str(time_counter), font=font, fill="#0000FF")
+    draw_oled.text((45, 8), str(time_counter), font=font, fill="#0000FF")
     oled.image(image_oled)
     # show all the changes we just made
     oled.show()
@@ -176,7 +176,7 @@ while True:
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
 
     time_counter = int(divmod(time.time() - start, 3600)[1] % 60)
-    if time_counter >= 50:
-        draw.text((20, 20), 'TIE', font=font2, fill="#0000FF")
+    if time_counter >= 10:
+        draw.text((30, 30), 'WIN', font=font2, fill="#0000FF")
         disp.image(image, rotation)
         break
