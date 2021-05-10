@@ -87,14 +87,6 @@ def on_connect(client, userdata, flags, rc):
 	# you can subsribe to as many topics as you'd like
 	# client.subscribe('some/other/topic')
 
-# this is the callback that gets called each time a message is recived
-def on_message(cleint, userdata, msg):
-    instructions = msg.payload.decode('UTF-8')
-    print(instructions)
-    
-	# you can filter by topics
-	# if msg.topic == 'IDD/some/other/topic': do thing
-
 
 # Every client needs a random ID
 client2 = mqtt.Client(str(uuid.uuid1()))
@@ -120,8 +112,12 @@ w = 15
 h = 15
 x1 = 50
 y1 = 50
+x2 = 200
+y2 = 100
+w2 = 25
+h2 = 25
 time_counter = 0.0
-cur_direction = 0
+cur_direction = 1
 speed = 5
 
 all_direction = {0:(0, -1), 1:(0, 1), 2:(-1, 0), 3:(1, 0)}
@@ -135,6 +131,12 @@ def calculate_next_coor(x1, y1, direction, speed):
     
     return x1, y1
 
+# this is the callback that gets called each time a message is recived
+def on_message(cleint, userdata, msg):
+    coor = msg.payload.decode('UTF-8')
+    x2, y2, w2, h2 = [int(t) for t in coor.split(',')]
+    
+
 while True:
     gesture = apds.gesture()
     if gesture != 0:
@@ -147,7 +149,10 @@ while True:
     # if (x1, y1) == (old_x1, old_y1):
     #     cur_direction = (cur_direction + 1) % 4
 
-    draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
+    draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(0, 100, 0))
+    
+    draw.rectangle((x2, y2, x2 + w2, y2 + h2), outline=0, fill=(100, 0, 0))
+
     disp.image(image, rotation)
 
     client2.loop()
@@ -158,5 +163,5 @@ while True:
     # show all the changes we just made
     oled.show()
 
-    client.publish("IDD/John", str(x1) + ',' + str(y1))
+    client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
     time_counter += 1
