@@ -7,7 +7,6 @@ import uuid
 import time
 import board
 import digitalio
-from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 import busio
 import adafruit_ssd1306
@@ -15,6 +14,8 @@ import adafruit_ssd1306
 from board import SCL, SDA
 from adafruit_apds9960.apds9960 import APDS9960
 from datetime import datetime
+
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 
 start = datetime.now()
 
@@ -175,4 +176,7 @@ while True:
     oled.show()
 
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
-    time_counter = datetime.now() - start
+    time_counter = time.strftime("%S", datetime.now() - start)
+    if time_counter >= 60:
+        draw.text((20, 20), 'TIE', font=font, fill="#0000FF")
+        break
