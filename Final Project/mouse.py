@@ -4,6 +4,30 @@
 import paho.mqtt.client as mqtt
 import uuid
 import time
+from PIL import Image, ImageDraw, ImageFont
+import adafruit_rgb_display.st7789 as st7789
+
+disp = st7789.ST7789(
+    spi,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+    width=135,
+    height=240,
+    x_offset=53,
+    y_offset=40,
+)
+height = disp.width  # we swap height/width to rotate it to landscape!
+width = disp.height
+image = Image.new("RGB", (width, height))
+rotation = 90
+
+# Get drawing object to draw on image.
+draw = ImageDraw.Draw(image)
+# Draw a black filled box to clear the image.
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+disp.image(image, rotation)
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -75,8 +99,17 @@ oled.fill(0)
 # we just blanked the framebuffer. to push the framebuffer onto the display, we call show()
 oled.show()
 
+w = 5
+h = 5
+x1 = 10
+x2 = 10
 time_counter = 0.0
 while True:
+    draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+    draw.rectangle((x1, y1, x2 + w, y1 + h), outline=0, fill=(5, 100, 0))
+    disp.image(image, rotation)
+
+
     client2.loop()
 
     draw.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
@@ -87,4 +120,5 @@ while True:
 
     client.publish("IDD/John", str(time_counter))
     time.sleep(0.5)
+    time_counter += 0.5
     
