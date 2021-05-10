@@ -129,7 +129,7 @@ while True:
     # show all the changes we just made
     oled.show()
 
-    client.publish("IDD/John", str(x1) + ',' + str(y1)))
+    client.publish("IDD/John", str(x1) + ',' + str(y1))
     time.sleep(0.1)
     time_counter += 0.1
     x1 += 1
