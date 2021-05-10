@@ -139,7 +139,7 @@ while True:
     draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
 
-    client2.loop()
+    # client2.loop()
 
     draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
     draw_oled.text((25, 5), str(time_counter), font=font, fill="#0000FF")
