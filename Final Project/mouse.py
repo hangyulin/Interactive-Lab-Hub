@@ -7,6 +7,9 @@ import time
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 
+# Setup SPI bus using hardware SPI:
+spi = board.SPI()
+
 disp = st7789.ST7789(
     spi,
     cs=cs_pin,
@@ -102,11 +105,11 @@ oled.show()
 w = 5
 h = 5
 x1 = 10
-x2 = 10
+y1 = 10
 time_counter = 0.0
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-    draw.rectangle((x1, y1, x2 + w, y1 + h), outline=0, fill=(5, 100, 0))
+    draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
 
 
@@ -121,4 +124,5 @@ while True:
     client.publish("IDD/John", str(time_counter))
     time.sleep(0.5)
     time_counter += 0.5
-    
+    x1 += 1
+    y1 += 1
