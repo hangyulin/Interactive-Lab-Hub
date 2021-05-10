@@ -14,6 +14,9 @@ import adafruit_ssd1306
 
 from board import SCL, SDA
 from adafruit_apds9960.apds9960 import APDS9960
+from datetime import datetime
+
+start = datetime.now()
 
 # Setup SPI bus using hardware SPI:
 
@@ -172,4 +175,4 @@ while True:
     oled.show()
 
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
-    time_counter += 1
+    time_counter = datetime.now() - start
