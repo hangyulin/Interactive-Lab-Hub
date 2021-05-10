@@ -110,16 +110,15 @@ oled.fill(0)
 # we just blanked the framebuffer. to push the framebuffer onto the display, we call show()
 oled.show()
 
-w = 5
-h = 5
-x1 = 10
-y1 = 10
+w = 10
+h = 10
+x1 = 50
+y1 = 50
 time_counter = 0.0
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
     draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
-
 
     client2.loop()
 
@@ -130,7 +129,7 @@ while True:
     oled.show()
 
     client.publish("IDD/John", str(x1) + ',' + str(y1))
-    time.sleep(0.1)
-    time_counter += 0.1
-    x1 += 1
-    y1 += 1
+    time.sleep(0.5)
+    time_counter += 0.5
+    x1 += 5
+    y1 += 5
