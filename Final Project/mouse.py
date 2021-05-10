@@ -2,11 +2,15 @@
 # SPDX-License-Identifier: MIT
 
 import paho.mqtt.client as mqtt
+from PIL import Image, ImageDraw, ImageFont
 import uuid
 import time
 import board
+import digitalio
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
+import busio
+import adafruit_ssd1306
 
 # Setup SPI bus using hardware SPI:
 
@@ -54,12 +58,6 @@ client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
 
-import board
-import busio
-import adafruit_ssd1306
-# import pygame
-from collections import deque
-from PIL import Image, ImageDraw, ImageFont
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 
 # Create the I2C interface.
