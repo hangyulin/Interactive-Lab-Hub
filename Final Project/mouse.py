@@ -118,7 +118,7 @@ time_counter = 0.0
 cur_direction = 0
 speed = 5
 
-all_direction = {0:(-1, 0), 1:(1,0), 2:(0,-1), 3:(0,1)}
+all_direction = {0:(0, 1), 1:(0, -1), 2:(-1, 0), 3:(1, 0)}
 
 def calculate_next_coor(x1, y1, direction, speed):
     new_x1 = x1 + all_direction[direction][0] * speed
@@ -139,7 +139,7 @@ while True:
     draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
 
-    # client2.loop()
+    client2.loop()
 
     draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
     draw_oled.text((25, 5), str(time_counter), font=font, fill="#0000FF")
@@ -148,5 +148,4 @@ while True:
     oled.show()
 
     client.publish("IDD/John", str(x1) + ',' + str(y1))
-    time.sleep(0.1)
-    time_counter += 0.1
+    time_counter += 1
