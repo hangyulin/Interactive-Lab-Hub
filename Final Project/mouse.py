@@ -134,7 +134,7 @@ while True:
     old_x1, old_y1 = x1, y1
     x1, y1 = calculate_next_coor(x1, y1, cur_direction, speed)
     if (x1, y1) == (old_x1, old_y1):
-        cur_direction = (cur_direction + 1) % 4
+        cur_direction = (cur_direction + 1) % 4 + 1
 
     draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
