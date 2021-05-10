@@ -145,7 +145,13 @@ def on_message(cleint, userdata, msg):
     
 
 client2.on_message = on_message
-    
+
+def isRectangleOverlap(self, R1, R2):
+      if (R1[0]>=R2[2]) or (R1[2]<=R2[0]) or (R1[3]<=R2[1]) or
+         (R1[1]>=R2[3]):
+         return False
+      else:
+   return True
 
 while True:
     gesture = apds.gesture()
@@ -176,7 +182,13 @@ while True:
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
 
     time_counter = int(divmod(time.time() - start, 3600)[1] % 60)
-    if time_counter >= 10:
+
+    if isRectangleOverlap([x1, y1, x1 + w, y1 + h], [x2, y2, x2 + w, y2 + h]):
+        draw.text((30, 30), 'LOSE', font=font2, fill="#0000FF")
+        disp.image(image, rotation)
+        break
+
+    elif time_counter >= 50:
         draw.text((30, 30), 'WIN', font=font2, fill="#0000FF")
         disp.image(image, rotation)
         break
