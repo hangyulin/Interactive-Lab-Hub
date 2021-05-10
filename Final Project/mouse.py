@@ -182,7 +182,7 @@ while True:
 
     time_counter = int((time.time() - start) % 3600)
 
-    if isRectangleOverlap([x1, y1, x1 + w, y1 + h], [x2, y2, x2 + w, y2 + h]):
+    if isRectangleOverlap([x1, y1, x1 + w, y1 + h], [x2, y2, x2 + w2, y2 + h2]):
         draw.text((30, 30), 'LOSE', font=font2, fill="#0000FF")
         disp.image(image, rotation)
         break
