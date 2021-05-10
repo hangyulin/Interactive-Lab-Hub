@@ -13,11 +13,10 @@ import adafruit_ssd1306
 
 from board import SCL, SDA
 from adafruit_apds9960.apds9960 import APDS9960
-from datetime import datetime
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
 
-start = datetime.now()
+start = time.time()
 
 # Setup SPI bus using hardware SPI:
 
@@ -177,7 +176,7 @@ while True:
 
     client.publish("IDD/John", ','.join([str(x1), str(y1), str(w), str(h)]))
 
-    time_counter = str(divmod(datetime.now() - start, 3600)[1] % 60)
+    time_counter = str(divmod(time.time() - start, 3600)[1] % 60)
     if time_counter >= 60:
         draw.text((20, 20), 'TIE', font=font, fill="#0000FF")
         break
