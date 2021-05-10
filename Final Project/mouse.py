@@ -116,7 +116,7 @@ x1 = 50
 y1 = 50
 time_counter = 0.0
 cur_direction = 0
-speed = 10
+speed = 5
 
 all_direction = {0:(-1, 0), 1:(1,0), 2:(0,-1), 3:(0,1)}
 
@@ -148,5 +148,5 @@ while True:
     oled.show()
 
     client.publish("IDD/John", str(x1) + ',' + str(y1))
-    time.sleep(0.5)
-    time_counter += 0.5
+    time.sleep(0.1)
+    time_counter += 0.1
