@@ -124,7 +124,7 @@ time_counter = 0.0
 cur_direction = 0
 speed = 5
 
-all_direction = {0:(-1, 0), 1:(1, 0), 2:(0, -1), 3:(0, 1)}
+all_direction = {0:(0, -1), 1:(0, 1), 2:(-1, 0), 3:(1, 0)}
 
 def calculate_next_coor(x1, y1, direction, speed):
     new_x1 = x1 + all_direction[direction][0] * speed
