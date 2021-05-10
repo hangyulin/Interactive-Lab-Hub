@@ -118,7 +118,7 @@ time_counter = 0.0
 cur_direction = 0
 speed = 10
 
-all_direction = {1:(-1, 0), 2:(1,0), 3:(0,-1), 4:(0,1)}
+all_direction = {0:(-1, 0), 1:(1,0), 2:(0,-1), 3:(0,1)}
 
 def calculate_next_coor(x1, y1, direction, speed):
     new_x1 = x1 + all_direction[direction][0] * speed
@@ -134,7 +134,7 @@ while True:
     old_x1, old_y1 = x1, y1
     x1, y1 = calculate_next_coor(x1, y1, cur_direction, speed)
     if (x1, y1) == (old_x1, old_y1):
-        cur_direction = (cur_direction + 1) % 4 + 1
+        cur_direction = (cur_direction + 1) % 4
 
     draw.rectangle((x1, y1, x1 + w, y1 + h), outline=0, fill=(5, 100, 0))
     disp.image(image, rotation)
