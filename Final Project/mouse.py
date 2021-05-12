@@ -17,6 +17,10 @@ from adafruit_apds9960.apds9960 import APDS9960
 
 ready = False
 other_ready = False
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
 
 start = time.time()
 
