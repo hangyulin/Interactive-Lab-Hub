@@ -150,6 +150,7 @@ client2.on_message = on_message
 
 
 while True:
+    client2.loop()
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 

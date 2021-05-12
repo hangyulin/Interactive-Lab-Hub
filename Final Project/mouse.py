@@ -164,6 +164,7 @@ def isRectangleOverlap(R1, R2):
         return True
 
 while True:
+    client2.loop()
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
