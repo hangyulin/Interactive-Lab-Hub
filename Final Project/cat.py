@@ -11,6 +11,9 @@ import busio
 from board import SCL, SDA
 from adafruit_apds9960.apds9960 import APDS9960
 
+ready = False
+other_ready = False
+
 # Setup SPI bus using hardware SPI:
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -123,12 +126,15 @@ def calculate_next_coor(x1, y1, direction, speed):
 
 def on_message(cleint, userdata, msg):
     global x2, y2, w2, h2
-    coor = msg.payload.decode('UTF-8')
-    new_coor = [int(t) for t in coor.split(',')]
-    x2 = new_coor[0]
-    y2 = new_coor[1]
-    w2 = new_coor[2]
-    h2 = new_coor[3]
+    if other_ready:
+        coor = msg.payload.decode('UTF-8')
+        new_coor = [int(t) for t in coor.split(',')]
+        x2 = new_coor[0]
+        y2 = new_coor[1]
+        w2 = new_coor[2]
+        h2 = new_coor[3]
+    elif msg.payload.decode('UTF-8') == 'ready':
+        other_ready = True
 
 def isRectangleOverlap(R1, R2):
     if (R1[0]>=R2[2]) or (R1[2]<=R2[0]) or (R1[3]<=R2[1]) or (R1[1]>=R2[3]):
@@ -137,6 +143,22 @@ def isRectangleOverlap(R1, R2):
         return True
 
 client2.on_message = on_message
+
+
+while True:
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+    if ready:
+        draw.text((50, 50), "Ready", font=font, fill="#fab300")
+        if other_ready:
+            break
+    
+    disp.image(image, rotation)
+
+    if buttonB.value and not buttonA.value:
+        client.publish("IDD/James", 'ready')
+        ready = True
 
 while time.time() < t_end:
     gesture = apds.gesture()

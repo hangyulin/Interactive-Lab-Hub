@@ -14,6 +14,10 @@ import adafruit_ssd1306
 from board import SCL, SDA
 from adafruit_apds9960.apds9960 import APDS9960
 
+
+ready = False
+other_ready = False
+
 start = time.time()
 
 # Setup SPI bus using hardware SPI:
@@ -136,12 +140,15 @@ def calculate_next_coor(x1, y1, direction, speed):
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
     global x2, y2, w2, h2
-    coor = msg.payload.decode('UTF-8')
-    new_coor = [int(t) for t in coor.split(',')]
-    x2 = new_coor[0]
-    y2 = new_coor[1]
-    w2 = new_coor[2]
-    h2 = new_coor[3]
+    if other_ready:
+        coor = msg.payload.decode('UTF-8')
+        new_coor = [int(t) for t in coor.split(',')]
+        x2 = new_coor[0]
+        y2 = new_coor[1]
+        w2 = new_coor[2]
+        h2 = new_coor[3]
+    elif msg.payload.decode('UTF-8') == 'ready':
+        other_ready = True
     
 
 client2.on_message = on_message
@@ -151,6 +158,21 @@ def isRectangleOverlap(R1, R2):
         return False
     else:
         return True
+
+while True:
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+    if ready:
+        draw.text((70, 30), 'Ready', font=font2, fill="#0000FF")
+        if other_ready:
+            break
+    
+    disp.image(image, rotation)
+
+    if buttonB.value and not buttonA.value:
+        client.publish("IDD/John", 'ready')
+        ready = True
 
 while True:
     gesture = apds.gesture()
