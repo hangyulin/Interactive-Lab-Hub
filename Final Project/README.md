@@ -7,7 +7,7 @@
 
 ## Teams
 
-Jianang Wang & John(Hangyu) Lin
+Jianang Wang & Hangyu (John) Lin
 
 # Cat and Mouse - Description
 
