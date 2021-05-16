@@ -7,7 +7,10 @@
 
 # Cat and Mouse
 
-
+We would like to introduce you to our Cat and Mouse game.
+It is a two players game, where each player controls a square on the screen.
+One player try to catch the other player, while the other player tries to run away for 120 seconds.
+The two players can be anywhere in the world and be able to challenge each other on their Raspberry Pi.
 
 
 ## What You'll Need
