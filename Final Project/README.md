@@ -31,6 +31,8 @@ Since this is a two-player game, both of the players need to have the same setup
 
 ## Design
 
+<img src="https://github.com/hangyulin/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/IMG_3559.jpg">
+
 We designed this game to be a two-player game - anyone who installed the game will be able to play no matter where he/she locates. We think this is a good interactive design for people to kill some time and make some friends.
 
 For players, the interaction is pretty easy - two players will discuss the role they want to play in advance, one plays as cat and the other as mouse. The game will be ready after two players both click the ready button on their LED screen, then "cat" will have 120 second to catch the "mouse". Both players need to use the gesture sensor to control their character, wave their hand to the same direction as they wish to movee their characters. Cat wins if cat successfully caught the mouse in 120 seconds, and mouse wins otherwise.
