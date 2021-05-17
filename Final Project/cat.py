@@ -24,7 +24,6 @@ buttonB.switch_to_input()
 cs_pin = digitalio.DigitalInOut(board.CE0)
 dc_pin = digitalio.DigitalInOut(board.D25)
 reset_pin = None
-t_end = time.time() + 120
 
 # Config for display baudrate (default max is 24mhz):
 BAUDRATE = 64000000
@@ -164,6 +163,8 @@ while True:
     if buttonB.value and not buttonA.value:
         client.publish("IDD/James", 'ready')
         ready = True
+
+t_end = time.time() + 120
 
 while time.time() < t_end:
     gesture = apds.gesture()

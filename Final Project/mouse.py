@@ -22,8 +22,6 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-start = time.time()
-
 # Setup SPI bus using hardware SPI:
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -178,6 +176,8 @@ while True:
     if buttonB.value and not buttonA.value:
         client.publish("IDD/John", 'ready')
         ready = True
+
+start = time.time()
 
 while True:
     gesture = apds.gesture()
